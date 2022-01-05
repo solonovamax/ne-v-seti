@@ -5,7 +5,7 @@ import net.minecraft.advancement.criterion.CriterionProgress;
 
 import java.util.Date;
 
-class ImmutableCriterionProgressWrapper implements CriterionProgressView {
+public class ImmutableCriterionProgressWrapper implements CriterionProgressView {
     private final CriterionProgress progress;
 
     public ImmutableCriterionProgressWrapper(CriterionProgress progress) {
@@ -29,7 +29,7 @@ class ImmutableCriterionProgressWrapper implements CriterionProgressView {
 
     static CriterionProgress makeCopyOf(CriterionProgress progress) {
         CriterionProgress newProgress = new CriterionProgress();
-        ((CriterionProgressAccessor) newProgress).setObtained(progress.getObtainedDate());
+        ((CriterionProgressAccessor) newProgress).setObtainedDate(progress.getObtainedDate());
         return newProgress;
     }
 
